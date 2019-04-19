@@ -15,21 +15,17 @@ namespace routing_mvc.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Detail([Bind(Include = "Name,Phone,Email")]Customer customer)
+        public ActionResult Check([Bind(Include = "Name,Phone,Email")]Customer customer)
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Check",  customer);   
+                return View(customer);
             }
 
-            return View(customer);
-        }
-
-        public ActionResult Check(Customer customer) 
-        {
-            return View(customer);
+            return View("Detail", customer);
         }
     }
 }
