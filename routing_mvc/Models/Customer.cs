@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace routing_mvc.Models
 {
@@ -10,6 +11,7 @@ namespace routing_mvc.Models
     {
         [Required]
         [StringLength(20,MinimumLength =3,ErrorMessage ="at least 3 letters")]
+        [Remote(action: "Verify", controller: "Customer")]
         public string Name { get; set; }
 
         [Required]
