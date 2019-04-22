@@ -170,6 +170,8 @@
     <Content Include="Views\Customer\Detail.cshtml" />
     <Content Include="Views\Customer\Check.cshtml" />
     <Content Include="Views\Data\Save.cshtml" />
+    <Content Include="Views\Customer\Detail2.cshtml" />
+    <Content Include="Views\Customer\Check2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
