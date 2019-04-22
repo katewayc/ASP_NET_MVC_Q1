@@ -1,0 +1,46 @@
+﻿@model routing_mvc.Models.Customer
+
+@{
+    ViewBag.Title = "Detail2";
+}
+
+<h2>Detail2</h2>
+
+<form id="form" action="/Customer/Check2" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2" for="Name">Name</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-length="at least 3 letters" data-val-length-max="20" data-val-length-min="3" data-val-required="Name 欄位是必要項。" id="Name" name="Name" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" for="Phone">Phone</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-regex="phone format has to be 09xx-xxx-xxx" data-val-regex-pattern="^\d{4}\-?\d{3}\-?\d{3}$" data-val-required="Phone 欄位是必要項。" id="Phone" name="Phone" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2" for="Email">Email</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" data-val="true" data-val-email="Email 欄位不是有效的電子郵件地址。" data-val-required="please enter Email" id="Email" name="Email" type="email" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Check2" class="btn btn-default">
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+    {
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+}
