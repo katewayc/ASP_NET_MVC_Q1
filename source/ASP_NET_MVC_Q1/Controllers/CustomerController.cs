@@ -23,7 +23,7 @@ namespace ASP_NET_MVC_Q1.Controllers
                 return View(customer);
             }
 
-            return View("Detail", customer);
+            return RedirectToAction("Detail", customer);
         }
 
         public ActionResult Detail2()
@@ -40,21 +40,7 @@ namespace ASP_NET_MVC_Q1.Controllers
                 return View(customer);
             }
 
-            return View("Detail2", customer);
+            return RedirectToAction("Detail2", customer);
         }
-
-        [HttpPost]
-        public ActionResult Verify(string Name)
-        {
-            var inValid = true;
-            if (inValid)
-            {
-                return Json($"{Name} is not valid");
-            }
-
-            return Json(true);
-        }
-
-
     }
 }

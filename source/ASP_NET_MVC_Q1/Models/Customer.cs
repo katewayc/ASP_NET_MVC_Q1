@@ -11,7 +11,6 @@ namespace ASP_NET_MVC_Q1.Models
     {
         [Required]
         [StringLength(20,MinimumLength =3,ErrorMessage ="at least 3 letters")]
-        [Remote(action: "Verify", controller: "Customer")]
         public string Name { get; set; }
 
         [Required]
